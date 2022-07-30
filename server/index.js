@@ -13,4 +13,4 @@ app.use(cors())
 loadRoutes(app)
 
 connectDB()
-app.listen(() => console.log(`Server is listening on PORT ${PORT}.`))
+app.listen(PORT, () => console.log("\x1b[36m", `__ Server is listening on PORT ${PORT}. __`))
