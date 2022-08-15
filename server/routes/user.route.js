@@ -1,9 +1,6 @@
-const User = require('../models/User')
-const userRouter = require('express').Router()
+const route = require('express').Router()
+const UserController = require('../controllers/user.controller')
 
-userRouter.get('/users', async (req, res) => {
-    const users = await User.find({}).select('-password')
-    res.send(users)
-})
+route.get('/all', UserController.GetUsers)
 
-module.exports = userRouter
+module.exports = route

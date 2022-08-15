@@ -5,7 +5,8 @@ const loadRoutes = app => {
         .forEach(file => {
             if(file !== 'index.js') {
                 const route = require(`./${file}`)
-                app.use('/api', route)
+                const routeName = file.split('.')[0]
+                app.use(`/api/${routeName}`, route)
             }
         })
 }
